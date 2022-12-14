@@ -1,20 +1,32 @@
 .App{
-  background-color: aliceblue;
-
+  background-color: #49c5b6
 }
 
 .line{
   height: 5px;
-  width: 100vw; 
-  background-color: rgb(14, 21, 112);
-  margin-left: 5rem; 
+  width: 95vw; 
+  background-color:#DF6C4F;
+  margin-left: 6rem; 
+  border-radius: 5rem;;
+
 }
 
+.top-line{
+  height: 2rem;
+  width: 100vw; 
+  background-color: #DF6C4F;
+  margin-left: 5rem; 
+  border-radius: 2rem;;
+
+}
 .logo{
   display: flex; 
   padding: 1rem; 
-  padding-left: 5rem;
-  background-color: white
+  margin-left: 5rem;
+  padding-top: 2rem; 
+  background-color: white;
+  color:rgb(14, 21, 112);
+  border-radius: 2rem;
 }
 
 .sidebar{
@@ -24,8 +36,9 @@
   padding: 1rem;
   width: 10vw; 
   height: 100vh; 
-  background-color: rgb(14, 21, 112);
+  background-color: #DF6C4F;
   overflow: hidden;
+  border-radius: 2rem; 
 }
 
 .collection-title{
@@ -33,13 +46,17 @@
   justify-content: center;
   padding: 1rem;
   color: white;
+  margin-bottom: 2rem;
+  text-decoration: underline ;
 }
 
 .collection-item{
   display:flex; 
   border: solid; 
   border-color: white; 
+  border-radius: 10%;
   padding: 2rem;
+  margin-bottom: 2rem;
   color: white;
 
 }

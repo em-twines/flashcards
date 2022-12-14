@@ -8,6 +8,7 @@ export default function Header() {
 
   return (
     <div>
+        <div className = 'top-line'></div>
         <div className = 'logo'>
             <h2>Memory</h2>
             <img src = {logo} alt  ="Logo"></img>
