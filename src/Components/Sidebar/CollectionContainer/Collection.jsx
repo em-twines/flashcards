@@ -5,8 +5,6 @@ export default function Collection({setCollection}, {collection} ) {
 
 
   return (
-    <div className = 'card-collections'>
-     
-   </div>
+    <div className = 'card-collections'>Collection</div>
   )
 }

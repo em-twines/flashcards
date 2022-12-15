@@ -12,16 +12,20 @@ export default function Sidebar({collections, setCollections, center, setCenter}
 
 
   useEffect(() => {
-    collection === null ? 
-    (setCenter(false) 
-
-    ):setCenter(true)
-    }, [center]);
+    if (collection === null) {
+      setCenter(false);
+      console.log('false');
+    }
+    else{
+      setCenter(true)
+      console.log('true');
+    }}, [center]);
   
 
 
   return (
-      <div className  ='sidebar-container'> 
+      <div >
+      {/* // className  ='sidebar-container'>  */}
          
 
          
@@ -32,28 +36,7 @@ export default function Sidebar({collections, setCollections, center, setCenter}
             <div className = "collection-item" onClick= {()=>{setCollection(collections[2])}}><h4 >PANDAS</h4></div> 
           </div>
           
-          {/* <div>
-          {collection === null ? 
-          (<Collection/> 
 
-          ):( <CardViewer />)
-          }
-          </div> */}
-{/* 
-          <div>
-            {collection === null ? 
-            (setCenter(false) 
-
-            ):setCenter(true)
-            }
-          </div> */}
-
-
-
-          {/* <CollectionContainer setCollection = {setCollection} collection = {collection}/> */}
-
-        
-          
 
     </div>
   )

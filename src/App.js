@@ -34,35 +34,42 @@ const[center, setCenter] = useState(false);
 
   useEffect(() => {
     getAllCollections(true);
-    setCenterElement();
-  }, [center]);
+  }, []);
 
 
-  function setCenterElement(){
-    if (setCenter(true)){
-      return <CardViewer/>
-    }
-    else{
-      return <Collection/>
-    }
+  // function setCenterElement(){
+  //   if (setCenter(true)){
+  //     return <CardViewer/>
+  //   }
+  //   else{
+  //     return <Collection/>
+  //   }
 
-  }
+  // }
 
 
   return (
 
     <div className = "App">
-      <div className = 'container-column'>
+      {/* <div className = 'container-column'> */}
+      <div>
       {/* <div className = 'container-box'> */}
         
         <div className  ='sidebar-container'>
           <Header/>
+          <div className ='sidebar-horizontal'>
           <Sidebar collections = {collections} setCollections = {setCollections} center ={center} setCenter = {setCenter}/>
+          
+      {center ? (
+        <CardViewer/>
+        ):(
+          <Collection/>
+        )}
         </div>
-
+      </div>      
+    </div>
 
   </div>
-    </div>
   );
 }
 
