@@ -1,25 +1,27 @@
 
 import CollectionContainer from '../../Components/Sidebar/CollectionContainer/CollectionContainer';
-import Collection from '../../Components/Sidebar/CollectionContainer/Collection'
+import Collection from '../../Components/Sidebar/CollectionContainer/Collection';
 import CardViewer from '../CardContainer/CardViewer';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
-export default function Sidebar({collections}, {setCollections}) {
-  
-  debugger; 
+export default function Sidebar({collections, setCollections, center, setCenter}) {
 
   const[collection, setCollection] = useState(null);
 
 
+  useEffect(() => {
+    collection === null ? 
+    (setCenter(false) 
 
-  // onClick= {()=>{setCollection(collections[0])}}
-
+    ):setCenter(true)
+    }, [center]);
+  
 
 
   return (
-      <div>
+      <div className  ='sidebar-container'> 
          
 
          
@@ -30,14 +32,25 @@ export default function Sidebar({collections}, {setCollections}) {
             <div className = "collection-item" onClick= {()=>{setCollection(collections[2])}}><h4 >PANDAS</h4></div> 
           </div>
           
-          <div>
+          {/* <div>
           {collection === null ? 
-          (<div className = 'grid-collection'><Collection className = 'collection'/></div> 
+          (<Collection/> 
 
-          ):( <div className = 'grid-cardviewer'><CardViewer className = 'cardviewer'/></div>)
+          ):( <CardViewer />)
           }
-          </div>
-          <CollectionContainer setCollection = {setCollection} collection = {collection}/>
+          </div> */}
+{/* 
+          <div>
+            {collection === null ? 
+            (setCenter(false) 
+
+            ):setCenter(true)
+            }
+          </div> */}
+
+
+
+          {/* <CollectionContainer setCollection = {setCollection} collection = {collection}/> */}
 
         
           

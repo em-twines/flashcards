@@ -7,7 +7,8 @@ export default function Header() {
 
 
   return (
-    <div>
+    // <div className  ='sidebar-container'> 
+    <div className = 'header-value'>
         <div className = 'top-line'></div>
         <div className = 'logo'>
             <h2>Memory</h2>

@@ -3,29 +3,23 @@
   position: relative;
 }
 
-.font-face-gm{
-    font-family: 'Freedom';
 
+
+.container-box{
+  display: flex; 
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0px; 
 }
-
 
 .sidebar-container{
   position: relative; 
   width: 20vw; 
-  height: 100vh; 
+  height: 79.8vh; 
   background-color: #f9c1c0;
   z-index: 0; 
 }
 
-/* .line{
-  position: relative;
-  height: 5px;
-  width: 100vw; 
-  background-color:#DF6C4F;
-  margin-left: 4rem; 
-  border-radius: 5rem;
-  z-index: 2;
-} */
 
 .top-line{
   height: 2rem;
@@ -79,48 +73,45 @@
   box-shadow: 1px 1px 3px rgba(0,0,0,.25);
   height: 14rem;
   width: 50%;
+  background-color: white;
 
   text-align: center;
   margin: auto;
   /* position: relative; */
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-/* 
-.grid-collection{
-
-  display: grid;
-  grid-template-areas: 'sidebar collection collection';
-
-  grid-auto-columns: 1fr; 
-  justify-content: space-between;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
-  gap: 5rem;
-
+  /* top: 50%;
+  transform: translateY(-50%); */
+  top: 20%;
+  transform: translateY(-20);
+  z-index: 2;
 }
 
 
-.grid-cardview{
 
-  display: grid;
-  grid-template-areas: 'sidebar cardview cardview';
 
-  grid-auto-columns: 1fr; 
-  justify-content: space-between;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
-  gap: 5rem;
 
+.card-collections{
+  background-image:
+    linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px);
+    /* repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px)); */
+    background-color: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+  height: 14rem;
+  width: 50%;
+
+  text-align: center;
+  margin: auto;
+  position: relative;
+  /* top: 20%;
+  transform: translateY(-80); */
+  z-index: 2;
 }
 
-.center{
-grid-area: center-content;  
-} */
+
+
+
+
+
+
 
 .sidebar{
   display: flex; 
@@ -136,16 +127,15 @@ grid-area: center-content;
   border-radius: 2rem; 
   z-index: 1;
 }
-/* 
-.collection{
-  grid-area: collection;
+
+.header-value{
+  width: 100vw; 
+  height: 10rem;
 }
 
-.cardview{
-  grid-area: cardview;
-} */
-
-/* width 50
-margin auto
-text-align center
-padding/margin */
+.container-column{
+  display: flex; 
+  flex-direction: column;
+  height: 100vh; 
+  width: 100vw; 
+}

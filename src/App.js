@@ -22,9 +22,9 @@ import axios from 'axios';
 
 function App() {
 
-
 const[card, setCard] = useState([]);
 const[collections, setCollections] = useState([]);
+const[center, setCenter] = useState(false); 
 
 
   async function getAllCollections() {
@@ -33,18 +33,35 @@ const[collections, setCollections] = useState([]);
   }
 
   useEffect(() => {
-    getAllCollections(true)
-  }, []);
+    getAllCollections(true);
+    setCenterElement();
+  }, [center]);
 
+
+  function setCenterElement(){
+    if (setCenter(true)){
+      return <CardViewer/>
+    }
+    else{
+      return <Collection/>
+    }
+
+  }
 
 
   return (
 
     <div className = "App">
-      <div className  ='sidebar-container'>
-        <Header/>
-        <Sidebar collections = {collections} setCollections = {setCollections} />
-      </div>
+      <div className = 'container-column'>
+      {/* <div className = 'container-box'> */}
+        
+        <div className  ='sidebar-container'>
+          <Header/>
+          <Sidebar collections = {collections} setCollections = {setCollections} center ={center} setCenter = {setCenter}/>
+        </div>
+
+
+  </div>
     </div>
   );
 }
