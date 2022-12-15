@@ -18,12 +18,9 @@
   width: 20vw; 
   height: 79.8vh; 
   background-color: #f9c1c0;
-  z-index: 0; 
   height: 100vh; 
 
 }
-
-
 
 .sidebar-horizontal{
   display: flex; 
@@ -54,8 +51,6 @@
   
 }
 
-
-
 .collection-title{
   display: flex; 
   justify-content: center;
@@ -76,24 +71,24 @@
 
 }
 
+.collection-item:hover{
+  transition: all 0.3s;
+}
 
 .card {
   background-image:
     linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px),
     repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px));
-  box-shadow: 1px 1px 3px rgba(0,0,0,.25);
-  height: 14rem;
-  width: 50%;
-  background-color: white;
-
-  text-align: center;
-  margin: auto;
-  /* position: relative; */
-  /* top: 50%;
-  transform: translateY(-50%); */
-  top: 20%;
-  transform: translateY(-20);
-  z-index: 2;
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.25);
+    max-height: 30rem;
+    width: 50%;
+  
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 6rem;
+    position: relative;
 }
 
 
@@ -104,7 +99,7 @@
   background-image:
     linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px);
     /* repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px)); */
-    background-color: white;
+  background-color: white;
   box-shadow: 1px 1px 3px rgba(0,0,0,.25);
   height: 30rem;
   width: 50%;
@@ -114,15 +109,8 @@
   margin-right: auto; 
   margin-top: 6rem;
   position: relative;
-  /* top: 50%;
-  transform: translateY(-50); */
-  z-index: 2;
+
 }
-
-
-
-
-
 
 
 
@@ -138,7 +126,6 @@
   overflow: hidden;
   margin-top: 2vh; 
   border-radius: 2rem; 
-  z-index: 1;
 }
 
 .header-value{

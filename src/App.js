@@ -36,6 +36,7 @@ const[center, setCenter] = useState(false);
     getAllCollections(true);
   }, []);
 
+  console.log(center);
 
   // function setCenterElement(){
   //   if (setCenter(true)){
