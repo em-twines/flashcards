@@ -1,45 +1,69 @@
 .App{
-  background-color: #49c5b6
+  background-color: #49c5b6;
+  position: relative;
+  /* font-family:Arial, Helvetica, sans-serif; */
 }
 
-.line{
+.font-face-gm{
+    font-family: 'Freedom';
+
+}
+
+
+.sidebar-container{
+  position: relative; 
+  width: 20vw; 
+  height: 100vh; 
+  background-color: #f9c1c0;
+  z-index: 0; 
+}
+
+/* .line{
+  position: relative;
   height: 5px;
-  width: 95vw; 
+  width: 100vw; 
   background-color:#DF6C4F;
-  margin-left: 6rem; 
-  border-radius: 5rem;;
+  margin-left: 4rem; 
+  border-radius: 5rem;
+  z-index: 2;
 
-}
+} */
 
 .top-line{
   height: 2rem;
   width: 100vw; 
   background-color: #DF6C4F;
-  margin-left: 5rem; 
-  border-radius: 2rem;;
 
 }
 .logo{
   display: flex; 
   padding: 1rem; 
-  margin-left: 5rem;
+  margin-left: 2rem;
+  margin-right: 3rem;
   padding-top: 2rem; 
-  background-color: white;
-  color:rgb(14, 21, 112);
+  width: 100vw;
+  background-color:#faf0e9;
+  color:rgb(0, 0, 0);
   border-radius: 2rem;
+  margin-top: 2rem; 
+  border-color: #DF6C4F;
+  border-width: 5px; 
+  
 }
 
 .sidebar{
   display: flex; 
   flex-direction: column;
   margin-left: 5rem; 
-  padding: 1rem;
+  padding: 1vh;
   width: 10vw; 
-  height: 100vh; 
+  height: 75vh; 
   background-color: #DF6C4F;
   overflow: hidden;
+  margin-top: 2vh; 
   border-radius: 2rem; 
 }
+
 
 .collection-title{
   display: flex; 
