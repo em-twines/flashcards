@@ -8,30 +8,40 @@ import React, { useState } from 'react';
 
 export default function Sidebar({collections}, {setCollections}) {
   
-  
-  const[collection, setCollection] = useState([]);
   debugger; 
+
+  const[collection, setCollection] = useState(null);
+
+
+
+  // onClick= {()=>{setCollection(collections[0])}}
+
+
 
   return (
       <div>
-        <CollectionContainer setCollection = {setCollection} collection = {collection}/>
-        <div className = 'main-grid'>
+         
+
+         
           <div className = 'sidebar'>
-            <div><h3  className = 'collection-title'>Collections</h3></div>
-            <div className = "collection-item" onClick= {()=>{setCollection(collections[0])}}> <h4 >Flutter</h4></div>
+            <div><h3 className = 'collection-title'>Collections</h3></div>
+            <div className = "collection-item" onClick= {()=>{setCollection(collections[0])}}><h4 >Flutter</h4></div>
             <div className = "collection-item" onClick= {()=>{setCollection(collections[1])}}><h4 >CSS</h4></div>
             <div className = "collection-item" onClick= {()=>{setCollection(collections[2])}}><h4 >PANDAS</h4></div> 
           </div>
           
+          <div>
+          {collection === null ? 
+          (<div className = 'grid-collection'><Collection className = 'collection'/></div> 
+
+          ):( <div className = 'grid-cardviewer'><CardViewer className = 'cardviewer'/></div>)
+          }
+          </div>
+          <CollectionContainer setCollection = {setCollection} collection = {collection}/>
+
         
           
-        <div>
-          {collection==0 
-          ? <Collection className = 'center'/> 
-          : <CardViewer className = 'center'/>} 
-         
-        </div>
-      </div>
+
     </div>
   )
 }
