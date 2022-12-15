@@ -17,22 +17,35 @@ import './Components/FontFace/Fonts/Freedom.ttf'
 import './index.css';
 
 
+
 import React, { useState, useEffect } from "react";
-
-
-
-
-
-
+import axios from 'axios';
 
 
 function App() {
+
+
+const[card, setCard] = useState([]);
+const[collections, setCollections] = useState([]);
+
+
+  async function getAllCollections() {
+    let response = await axios.get("http://127.0.0.1:8000/api/collections/");
+    setCollections(response.data);
+  }
+
+  useEffect(() => {
+    getAllCollections(true)
+  }, []);
+
+
+
   return (
 
     <div className = "App">
       <div className  ='sidebar-container'>
         <Header/>
-        <Sidebar/>
+        <Sidebar collections = {collections} setCollections = {setCollections} />
       </div>
     </div>
   );

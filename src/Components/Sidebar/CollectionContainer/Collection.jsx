@@ -1,11 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class Collection extends Component {
-  render() {
-    return (
-      <div>Collection</div>
-    )
-  }
+export default function Collection({setCollection}, {collection} ) {
+
+
+
+  return (
+    <div>
+      {/* CSS for showing the page */}
+
+      I AM COLLECTIONS
+
+    </div>
+  )
 }
-
-export default Collection

@@ -1,7 +1,15 @@
 import React from 'react'
+import CardViewer from '../../CardContainer/CardViewer';
+import Collection from '../CollectionContainer/Collection'
 
-export default function CollectionContainer() {
+
+export default function CollectionContainer({setCollection}, {collection}) {
+
+
+  
   return (
-    <div>CollectionContainer</div>
+    <div> 
+
+    </div>
   )
 }
