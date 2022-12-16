@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function CardViewer() {
   return (
-    <div className = 'card'>CARD VIEWER</div>
+    <div className = 'card-collections'></div>
   )
 }

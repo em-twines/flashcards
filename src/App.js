@@ -24,8 +24,9 @@ function App() {
 
 const[card, setCard] = useState([]);
 const[collections, setCollections] = useState([]);
-const[center, setCenter] = useState(false); 
-
+const[center, setCenter] = useState(true); 
+const[collection, setCollection] = useState(null);
+// const[cards, setCards] = useState ([])
 
   async function getAllCollections() {
     let response = await axios.get("http://127.0.0.1:8000/api/collections/");
@@ -38,39 +39,26 @@ const[center, setCenter] = useState(false);
 
   console.log(center);
 
-  // function setCenterElement(){
-  //   if (setCenter(true)){
-  //     return <CardViewer/>
-  //   }
-  //   else{
-  //     return <Collection/>
-  //   }
-
-  // }
-
 
   return (
 
     <div className = "App">
-      {/* <div className = 'container-column'> */}
-      <div>
-      {/* <div className = 'container-box'> */}
-        
+      
         <div className  ='sidebar-container'>
           <Header/>
           <div className ='sidebar-horizontal'>
-          <Sidebar collections = {collections} setCollections = {setCollections} center ={center} setCenter = {setCenter}/>
+          <Sidebar collections = {collections} setCollections = {setCollections} setCenter = {setCenter} collection = {collection} setCollection = {setCollection} />
           
       {center ? (
         <CardViewer/>
         ):(
-          <Collection/>
+          <Collection collection = {collection}/>
         )}
         </div>
       </div>      
     </div>
 
-  </div>
+
   );
 }
 
