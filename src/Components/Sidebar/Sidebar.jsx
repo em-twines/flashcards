@@ -17,7 +17,7 @@ export default function Sidebar({collections, setCenter, collection, setCollecti
             
           <div className = 'sidebar'>
             <div><h3 className = 'collection-title'>Collections</h3></div>
-            <div className = "collection-item" onClick= {()=>{setCollection(collections[0]) ; setCenter(false) ; console.log(collections[0].title)}}><h4 >Flutter</h4></div>
+            <div className = "collection-item" onClick= {()=>{setCollection(collections[0]) ; setCenter(false)}}><h4 >Flutter</h4></div>
             <div className = "collection-item" onClick=  {()=>{setCollection(collections[1]) ; setCenter(false)}}><h4 >CSS</h4></div>
             <div className = "collection-item" onClick= {()=>{setCollection(collections[2]) ; setCenter(false)}}><h4 >PANDAS</h4></div> 
           </div>

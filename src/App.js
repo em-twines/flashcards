@@ -22,16 +22,21 @@ import axios from 'axios';
 
 function App() {
 
-const[card, setCard] = useState([]);
+// const[card, setCard] = useState([]);
 const[collections, setCollections] = useState([]);
 const[center, setCenter] = useState(true); 
 const[collection, setCollection] = useState(null);
-// const[cards, setCards] = useState ([])
+const[noLines, setLines] = (useState(true))
+const[index, setIndex] = useState([-1]);
+const[cards, setCards] = useState ([]);
 
-  async function getAllCollections() {
+
+async function getAllCollections() {
     let response = await axios.get("http://127.0.0.1:8000/api/collections/");
     setCollections(response.data);
   }
+
+  
 
   useEffect(() => {
     getAllCollections(true);
@@ -49,11 +54,15 @@ const[collection, setCollection] = useState(null);
           <div className ='sidebar-horizontal'>
           <Sidebar collections = {collections} setCollections = {setCollections} setCenter = {setCenter} collection = {collection} setCollection = {setCollection} />
           
-      {center ? (
+      {noLines ?(
+        (center ? (
         <CardViewer/>
         ):(
-          <Collection collection = {collection}/>
-        )}
+          <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards}/>
+        ))
+      ):(
+        <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards}/>
+      )}
         </div>
       </div>      
     </div>
