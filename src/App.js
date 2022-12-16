@@ -30,6 +30,9 @@ const[noLines, setLines] = (useState(true))
 const[index, setIndex] = useState([-1]);
 const[cards, setCards] = useState ([]);
 const[cardContent, setCardContent] = useState([]);
+const[collectionComponent, setCollectionComponent] = useState();
+
+
 
 async function getAllCollections() {
     let response = await axios.get("http://127.0.0.1:8000/api/collections/");
@@ -61,7 +64,7 @@ async function getAllCollections() {
               <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards} cardContent = {cardContent}/>
             ))
           ):(
-            <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards}/>
+            <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} noLines = {noLines} setLines = {setLines} collectionComponent = {collectionComponent}setCollectionComponent = {setCollectionComponent}/>
           )}
         </div>
       </div>      

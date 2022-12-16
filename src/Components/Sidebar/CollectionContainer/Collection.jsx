@@ -10,13 +10,12 @@ export default function Collection({setCollection, collection, noLines, setLines
   // console.log(`cards: ${cards.setIndex?.word}`)
 
   useEffect(() => {
-    setIndex(+1);
+    setIndex(0);
   }, []);
 
   return (
         <div className = 'card-collections'><h2>{collection.title}</h2>
         <CollectionContainer collection = {collection} cards = {cards} setCards = {setCards} />
-        {console.log(`collection: ${collection}`)}
         <div className = 'card-content'>{cards[index]?.word}</div>
         <Flip noLines = {noLines} setLines = {setLines}/>
     </div>

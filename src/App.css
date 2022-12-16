@@ -149,21 +149,146 @@
 .card-answer{
   font-size: 1.3rem;
   padding-top: 8.8rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
 }
 
-/* .right-bottom-button{
-  display: block; 
-  margin-left: auto; 
-  margin-right: 10rem;  
-  top: -450%;
-  transform: translate(0, 450%);
+
+.button-box{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 12vw;
+  margin-right: 12vw; 
+}
+
+.next-button{
+  border-radius: 4px;
+  background-color:#64a0c4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.3rem;
+  width: 8vw;
+  height: 4vw; 
+  transition: all 0.3s;
+  cursor: pointer;
+  /* margin-right: 3vw;
+  margin-left: auto; */
+  top: -200%;
+  transform: translateY(200%);
+}
+
+.next-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+} 
+
+.next-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+} 
+
+.next-button:hover span {
+  padding-right: 25px;
+}
+
+.next-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+.prev-button{
+  border-radius: 4px;
+  background-color:#64a0c4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.3rem;
+  width: 8vw;
+  height: 4vw; 
+  transition: all 0.3s;
+  cursor: pointer;
+  /* margin-right: 3vw;
+  margin-left: auto; */
+  top: -200%;
+  transform: translateY(200%);
+}
+
+.prev-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+} 
+
+.prev-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+} 
+
+.prev-button:hover span {
+  padding-right: 25px;
+}
+
+.prev-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+.prev-button-transparent{
+  border-radius: 4px;
+  background-color:#64a0c4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.3rem;
+  width: 8vw;
+  height: 4vw; 
+  transition: all 0.3s;
+  cursor: pointer;
+  /* margin-right: 3vw;
+  margin-left: auto; */
+  top: -200%;
+  transform: translateY(200%);
+  opacity: .5
 
 }
- */
-/* 
- .button-bottom-right{
-  margin: 2rem; 
- } */
+
+
+.next-button-transparent{
+  border-radius: 4px;
+  background-color:#64a0c4;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.3rem;
+  width: 8vw;
+  height: 4vw; 
+  transition: all 0.3s;
+  cursor: pointer;
+  /* margin-right: 3vw;
+  margin-left: auto; */
+  top: -200%;
+  transform: translateY(200%);
+opacity: .5;
+}
+
+
 
 .button {
   border-radius: 4px;
@@ -171,14 +296,13 @@
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
+  font-size: 1.5rem;
+  width: 8vw;
+  height: 5vw;
   transition: all 0.3s;
   cursor: pointer;
-  /* margin: 5px; */
-  margin: 4rem;
-  transform: scale(.8);
+  margin: 3vw;
+  /* transform: scale(.8); */
 }
 
 .button span {
