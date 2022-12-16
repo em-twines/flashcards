@@ -20,7 +20,7 @@ export default function CollectionContainer({collection, cards, setCards}) {
 
 useEffect(() => {
   getCollection();
-}, []);
+}, [collection]);
 
   return (
     <div >

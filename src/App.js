@@ -29,7 +29,7 @@ const[collection, setCollection] = useState(null);
 const[noLines, setLines] = (useState(true))
 const[index, setIndex] = useState([-1]);
 const[cards, setCards] = useState ([]);
-
+const[cardContent, setCardContent] = useState([]);
 
 async function getAllCollections() {
     let response = await axios.get("http://127.0.0.1:8000/api/collections/");
@@ -52,17 +52,17 @@ async function getAllCollections() {
         <div className  ='sidebar-container'>
           <Header/>
           <div className ='sidebar-horizontal'>
-          <Sidebar collections = {collections} setCollections = {setCollections} setCenter = {setCenter} collection = {collection} setCollection = {setCollection} />
+          <Sidebar collections = {collections} setCollections = {setCollections} setCenter = {setCenter} collection = {collection} setCollection = {setCollection} center = {center} setLines = {setLines} setCardContent = {setCardContent}/>
           
-      {noLines ?(
-        (center ? (
-        <CardViewer/>
-        ):(
-          <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards}/>
-        ))
-      ):(
-        <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards}/>
-      )}
+          {noLines ? (
+            (center ? (
+            <CardViewer/>
+            ):(
+              <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards} cardContent = {cardContent}/>
+            ))
+          ):(
+            <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards}/>
+          )}
         </div>
       </div>      
     </div>

@@ -9,10 +9,8 @@ export default function CardContainer({collection, cards, setCards}) {
   // const[cards, setCards] = useState ([]);
 
   async function getAnswers(){
-    console.log(`title: ${collection.title}`);
     let response = await axios.get(`http://127.0.0.1:8000/api/collections/${collection?.id}/cards/`)
     setCards(response.data);
-    console.log(response.data)
 }
 
 
