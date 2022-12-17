@@ -55,7 +55,7 @@ async function getAllCollections() {
         <div className  ='sidebar-container'>
           <Header/>
           <div className ='sidebar-horizontal'>
-          <Sidebar collections = {collections} setCollections = {setCollections} collection = {collection} setCollection = {setCollection} setLines = {setLines} setCardContent = {setCardContent} center = {center} setCenter = {setCenter} questions = {questions} setQuestions = {setQuestions}/>
+          <Sidebar collections = {collections} setCollections = {setCollections} collection = {collection} setCollection = {setCollection}  center = {center} setCenter = {setCenter} questions = {questions} setQuestions = {setQuestions} index  ={index} setIndex = {setIndex}/>
           
           {center ? (
             <CardViewer/>

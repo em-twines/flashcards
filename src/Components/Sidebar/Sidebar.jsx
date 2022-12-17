@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-export default function Sidebar({collections, collection, setCollection, setLines, setCardContent, questions, setQuestions, center, setCenter}) {
+export default function Sidebar({collections, collection, setCollection,  questions, setQuestions, center, setCenter, index, setIndex}) {
 
   // const[collection, setCollection] = useState(null);
 
@@ -17,7 +17,7 @@ export default function Sidebar({collections, collection, setCollection, setLine
     {collections.map((el) => {
       return(
 
-        <div onClick= {() => {setCollection(collections[el.id-1]) ; setCenter(false); setQuestions(false); }}> 
+        <div onClick= {() => {setCollection(collections[el.id-1]) ; setCenter(false); setQuestions(false); setIndex(0) }}> 
           <h4 className = 'collection-item'>{el.title}</h4>    
         </div>
         )})}
