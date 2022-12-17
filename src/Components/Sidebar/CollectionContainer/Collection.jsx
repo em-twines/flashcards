@@ -9,9 +9,9 @@ export default function Collection({setCollection, collection, noLines, setLines
   // const[cards, setCards] = useState ([]);
   // console.log(`cards: ${cards.setIndex?.word}`)
 
-  useEffect(() => {
-    setIndex(0);
-  }, []);
+  // useEffect(() => {
+  //   setIndex(0);
+  // }, []);
 
   return (
         <div className = 'card-collections'><h2>{collection?.title}</h2>

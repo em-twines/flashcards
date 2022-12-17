@@ -7,7 +7,7 @@ export default function Flip({questions, setQuestions}) {
 
   function changeQuestions(){
     setQuestions(true)
-    debugger
+    
 
 }
 
