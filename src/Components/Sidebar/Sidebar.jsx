@@ -1,15 +1,11 @@
 
-import CollectionContainer from '../../Components/Sidebar/CollectionContainer/CollectionContainer';
-import Collection from '../../Components/Sidebar/CollectionContainer/Collection';
-import CardViewer from '../CardContainer/CardViewer';
 
 import React, { useEffect, useState } from 'react';
 
 
-export default function Sidebar({collections, setCenter, collection, setCollection, center, setLines, setCardContent}) {
+export default function Sidebar({collections, collection, setCollection, setLines, setCardContent, questions, setQuestions, center, setCenter}) {
 
   // const[collection, setCollection] = useState(null);
-
 
 
 
@@ -20,7 +16,8 @@ export default function Sidebar({collections, setCenter, collection, setCollecti
     <div>            
     {collections.map((el) => {
       return(
-        <div onClick= {() => {setCollection(collections[el.id-1]) ; setCenter(false) ; setCardContent(false) ; setLines(true)}}>
+
+        <div onClick= {() => {setCollection(collections[el.id-1]) ; setCenter(false); setQuestions(false); }}> 
           <h4 className = 'collection-item'>{el.title}</h4>    
         </div>
         )})}

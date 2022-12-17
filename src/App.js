@@ -16,7 +16,7 @@ import './index.css';
 
 
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 
 
@@ -25,13 +25,14 @@ function App() {
 // const[card, setCard] = useState([]);
 const[collections, setCollections] = useState([]);
 const[center, setCenter] = useState(true); 
+// const centerRef = useRef(center);
 const[collection, setCollection] = useState(null);
 const[noLines, setLines] = (useState(true))
 const[index, setIndex] = useState([-1]);
 const[cards, setCards] = useState ([]);
 const[cardContent, setCardContent] = useState([]);
 const[collectionComponent, setCollectionComponent] = useState();
-
+const[questions, setQuestions] = useState(null);
 
 
 async function getAllCollections() {
@@ -45,7 +46,6 @@ async function getAllCollections() {
     getAllCollections(true);
   }, []);
 
-  console.log(center);
 
 
   return (
@@ -55,9 +55,20 @@ async function getAllCollections() {
         <div className  ='sidebar-container'>
           <Header/>
           <div className ='sidebar-horizontal'>
-          <Sidebar collections = {collections} setCollections = {setCollections} setCenter = {setCenter} collection = {collection} setCollection = {setCollection} center = {center} setLines = {setLines} setCardContent = {setCardContent}/>
+          <Sidebar collections = {collections} setCollections = {setCollections} collection = {collection} setCollection = {setCollection} setLines = {setLines} setCardContent = {setCardContent} center = {center} setCenter = {setCenter} questions = {questions} setQuestions = {setQuestions}/>
           
-          {noLines ? (
+          {center ? (
+            <CardViewer/>
+            ):(
+            
+           !questions ? (
+          <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions} debugger/>
+          ):(
+          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} noLines = {noLines} setLines = {setLines} questions  ={questions} setQuestions = {setQuestions} />))}
+
+
+
+          {/* {noLines ? (
             (center ? (
             <CardViewer/>
             ):(
@@ -65,7 +76,7 @@ async function getAllCollections() {
             ))
           ):(
             <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} noLines = {noLines} setLines = {setLines} collectionComponent = {collectionComponent}setCollectionComponent = {setCollectionComponent}/>
-          )}
+          )} */}
         </div>
       </div>      
     </div>

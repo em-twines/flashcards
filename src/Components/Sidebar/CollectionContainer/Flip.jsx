@@ -1,9 +1,20 @@
-import React from 'react'
-import Collection from './Collection'
+import React, { useState } from 'react';
 
 
-export default function Flip({noLines, setLines}) {
+
+export default function Flip({questions, setQuestions}) {
+
+
+  function changeQuestions(){
+    setQuestions(true)
+    debugger
+
+}
+
   return (
-    <button type = 'button' className = 'button button-bottom-right' onClick= {()=>{setLines(false)}}><span>Flip</span></button>
+    // <button type = 'button' className = 'button button-bottom-right' onClick= {()=>{setLines(false)}}><span>Flip</span></button>
+    <div onClick= {()=>{(changeQuestions()) ; console.log(questions) }} >
+      <button type = 'button' className = 'button button-bottom-right' ><span>Flip</span></button>
+   </div>
   )
 }
