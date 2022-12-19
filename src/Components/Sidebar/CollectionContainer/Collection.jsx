@@ -18,6 +18,8 @@ export default function Collection({setCollection, collection, noLines, setLines
         <CollectionContainer collection = {collection} cards = {cards} setCards = {setCards} />
         <div className = 'card-content'>{cards[index]?.word}</div>
         <Flip  questions = {questions} setQuestions = {setQuestions}/>
+        <div className = 'card-number'> {index+1}/{cards.length}</div>
+
     </div>
 
   )

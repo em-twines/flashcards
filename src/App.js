@@ -27,12 +27,14 @@ const[collections, setCollections] = useState([]);
 const[center, setCenter] = useState(true); 
 // const centerRef = useRef(center);
 const[collection, setCollection] = useState(null);
-const[noLines, setLines] = (useState(true))
+const[noLines, setLines] = useState(true);
 const[index, setIndex] = useState(0);
 const[cards, setCards] = useState ([]);
 const[cardContent, setCardContent] = useState([]);
 const[collectionComponent, setCollectionComponent] = useState();
 const[questions, setQuestions] = useState(null);
+const[selected, setSelected] = useState(false);
+const[otherSelected, setOtherSelected] = useState(false);
 
 
 async function getAllCollections() {
@@ -55,7 +57,7 @@ async function getAllCollections() {
         <div className  ='sidebar-container'>
           <Header/>
           <div className ='sidebar-horizontal'>
-          <Sidebar collections = {collections} setCollections = {setCollections} collection = {collection} setCollection = {setCollection}  center = {center} setCenter = {setCenter} questions = {questions} setQuestions = {setQuestions} index  ={index} setIndex = {setIndex}/>
+          <Sidebar collections = {collections} setCollections = {setCollections} collection = {collection} setCollection = {setCollection}  center = {center} setCenter = {setCenter} questions = {questions} setQuestions = {setQuestions} index  ={index} setIndex = {setIndex} selected = {selected} setSelected = {setSelected}  otherSelected = {otherSelected} setOtherSelected = {setOtherSelected} />
           
           {center ? (
             <CardViewer/>
