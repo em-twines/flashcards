@@ -12,7 +12,6 @@ import Header from './Components/Header/Header.jsx';
 import Sidebar from './Components/Sidebar/Sidebar.jsx';
 
 import "bootstrap/dist/css/bootstrap.css";
-import './index.css';
 
 
 
@@ -35,6 +34,9 @@ const[collectionComponent, setCollectionComponent] = useState();
 const[questions, setQuestions] = useState(null);
 const[selected, setSelected] = useState(false);
 const[otherSelected, setOtherSelected] = useState(false);
+const [modalShow, setModalShow] = useState(false);
+
+
 
 
 async function getAllCollections() {
@@ -64,9 +66,9 @@ async function getAllCollections() {
             ):(
             
            !questions ? (
-          <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions} debugger/>
+          <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow}/>
           ):(
-          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} noLines = {noLines} setLines = {setLines} questions  ={questions} setQuestions = {setQuestions} />))}
+          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} noLines = {noLines} setLines = {setLines} questions  ={questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} />))}
 
 
 

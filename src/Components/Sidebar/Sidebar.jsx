@@ -1,7 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import MappedSidebar from './MappedSidebar/MappedSidebar';
+import MappedSidebar from './MappedSidebar';
 
 
 export default function Sidebar({collections, setCollection,  questions, setQuestions, center, setCenter, index, setIndex}) {

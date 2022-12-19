@@ -1,3 +1,6 @@
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
 .App{
   background-color: #49c5b6;
   position: relative;
@@ -178,6 +181,101 @@
   transform: translateX(-90%); 
 
 }
+
+
+.edit-button{
+  position: absolute; 
+  top: 82%;
+  transform: translateY(-82%);  
+  left: 10%;
+  transform: translateX(-10%); 
+  /* border-radius: 4px; */
+  background-color:transparent;
+  border: none;
+  color: #000000;
+  transition: all 0.3s;
+  cursor: pointer; 
+} 
+
+
+.add-button{
+  position: absolute; 
+  top: 8%;
+  transform: translateY(-8%); 
+  left: 93%;
+  transform: translateX(-93%);  
+  /* border-radius: 4px; */
+  background-color:transparent;
+  border: none;
+  color: #000000;
+  transition: all 0.3s;
+  cursor: pointer; 
+} 
+
+.add-button:hover{
+  /* transform: scale(1.5);  */
+  color: #64a0c4;
+
+} 
+
+.delete-card{
+  position: absolute; 
+  top: 10%;
+  transform: translateY(-10%); 
+  left: 9%;
+  transform: translateX(-9%);
+}
+
+.delete-button{
+  border-radius: 4px;
+  background-color:transparent;
+  border: none;
+  color: #000000;
+  text-align: left;
+  transition: all 0.3s;
+  cursor: pointer; 
+} 
+
+/* .delete-button:hover{
+  transform: scale(1.1);  
+  color: #64a0c4;
+} */
+
+.edit-size{
+  font-size: 1.6rem;
+}
+.trash-size{
+  font-size: 2rem;
+}
+
+.font-adjust{
+  font-size: 3rem;
+}
+/* 
+.add-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+} 
+
+.add-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+} 
+
+.add-button:hover span {
+  padding-right: 25px;
+}
+
+.add-button:hover span:after {
+  opacity: 1;
+  right: 0;
+} */ 
 
 .button-box{
   display: flex;
