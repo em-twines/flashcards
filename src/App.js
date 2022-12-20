@@ -101,6 +101,32 @@ function displayPrevCard(){
     return cards[index].word;
 }
 
+function setDefaultCard(){
+  if (index===0){
+    setNext(true);
+    setQuestions(false);
+    changeInequality();
+    setCard(cards[index + 1]);
+    setIndex(index + 1);
+    return cards[index + 1].word;
+  }
+  else if(index===1){
+    setPrev(false);
+    setQuestions(false);
+    changeInequality(); 
+    setCard(cards[index-1]);
+    setIndex(index-1);
+    return cards[index-1].word;
+  }
+  else {
+    setPrev(true);
+    setQuestions(false);
+    changeInequality(); 
+    setIndex(index-1);
+    console.log(cards[index-1].word)
+    return cards[index-1].word;
+  }
+}
 
   return (
 
@@ -116,10 +142,10 @@ function displayPrevCard(){
             ):(
             
            !questions ? (
-          <Collection collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext}/>
+          <Collection collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard}/>
           ):(
-          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} />))}
-
+          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} />))}
+ 
 
 
           {/* {noLines ? (
