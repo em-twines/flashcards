@@ -1,10 +1,10 @@
 import React, { useState , useEffect} from 'react';
 
-export default function NextCard({cards, setCards, index, setIndex, questions, setQuestions}) {
+export default function NextCard({cards, setCards, card, setCard, index, setIndex, questions, setQuestions}) {
 
   const[prev, setPrev] = useState(false);
   const[next, setNext] = useState(true);
-  const[card, setCard] = useState([cards]);
+  // const[card, setCard] = useState([cards]);
 
   const [inequality, setInequality] = useState(false);
   const [prevInequality, setPrevInequality] = useState(false);
@@ -38,23 +38,32 @@ export default function NextCard({cards, setCards, index, setIndex, questions, s
   }, [])
   
 
-    function displayNextCard(){
-      setNext(true);
-      setQuestions(false);
-      changeInequality();
-      myIndex = setIndex(index + 1);
-      let myWord  = setCard(cards[myIndex])
-      return card.word
+  //   function displayNextCard(){
+  //     setNext(true);
+  //     setQuestions(false);
+  //     changeInequality();
+  //     myIndex = setIndex(index + 1);
+  //     let myWord  = setCard(cards[myIndex])
+  //     return card.word
      
-  }
+  // }
 
+  function displayNextCard(){
+    setNext(true);
+    setQuestions(false);
+    changeInequality();
+    setCard(cards[index + 1])
+    setIndex(index + 1);
+    return cards[index + 1].word;
+   
+}
   function displayPrevCard(){
       setPrev(true);
       setQuestions(false);
       changeInequality(); 
-      let myIndex = setIndex(index);
-      let myWord  = setCard(cards[myIndex])
-      return card.word
+      setIndex(index);
+      setCard(cards[index]);
+      return cards[index].word;
   }
 
 

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 
-export default function AddCard(props) {
+export default function AddCard({collection, show, onHide, cards, setCards}) {
 
 
 const[word, setWord] = useState('');
@@ -11,13 +11,13 @@ const[definition, setDefinition] = useState('');
 
 
     async function addNewCard(card){
-        let res = await axios.post(`http://127.0.0.1:8000/api/collections/${props.collection.id}/cards/`, card);
+  
+      let res = await axios.post(`http://127.0.0.1:8000/api/collections/${collection.id}/cards/`, card);
+        console.log(res); 
         if(res.status === 201){
-          console.log(res); 
-          // props.displayAllCards(false);
+          setCards(cards);
         }
     }
-
     function handleSubmit(event){
         event.preventDefault();
        let newCard = {
@@ -35,7 +35,8 @@ const[definition, setDefinition] = useState('');
     // <div className = 'add-card'><button className = "add-button btn bg-transparent btn-outline-transparent btn-lg"><i class="bi bi-plus font-adjust"></i></button>
   
     <Modal
-    {...props}
+    // {...props}
+    {...{collection, show, onHide}}
     size="lg"
     aria-labelledby="contained-modal-title-vcenter"
     centered
@@ -57,7 +58,7 @@ const[definition, setDefinition] = useState('');
               <label className = 'name'>Back</label>
               <input className ='form-control' type = 'text'  value={definition} onChange={(event) => setDefinition(event.target.value)} required></input>
 
-              <button onClick={props.onHide}className = 'badge badge-pill btn btn-primary ' type = 'submit'>Submit</button>
+              <button onClick={onHide}className = 'badge badge-pill btn btn-primary ' type = 'submit'>Submit</button>
           </form>
       </p>
     </Modal.Body>
