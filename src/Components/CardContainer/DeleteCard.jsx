@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from 'axios';
 
-export default function DeleteCard({collection, cards, index, getCollection, displayPrevCard, displayNextCard, changeInequality, inequality, setInequality, prevInequality, setPrevInequality, prev, setPrev, next, setNext}) {
+export default function DeleteCard({collection, cards, index, setIndex, getCollection, displayPrevCard, displayNextCard, changeInequality, inequality, setInequality, prevInequality, setPrevInequality, prev, setPrev, next,  setNext}) {
 
-    
+
 
   async function deleteCard(){
     console.log(index);
@@ -13,8 +13,15 @@ export default function DeleteCard({collection, cards, index, getCollection, dis
     debugger
     console.log('Returned data:', response);
     getCollection();
+    if (index===0){
+      displayNextCard();
+    }
+    else {
+      displayPrevCard();
+    }
+  }
 
-}
+
 
 
   return (
