@@ -1,13 +1,9 @@
 import './App.css';
-import AddCard from './Components/CardContainer/AddCard';
 import Card from'./Components/CardContainer/Card.jsx';
-import CardContainer from './Components/CardContainer/CardContainer.jsx';
+
 import CardViewer from './Components/CardContainer/CardViewer';
-import DeleteCard from './Components/CardContainer/DeleteCard';
-import EditCard from './Components/CardContainer/EditCard';
-import NextCard from './Components/CardContainer/NextCard';
+
 import Collection from './Components/Sidebar/CollectionContainer/Collection.jsx';
-import CollectionsContainer from './Components/Sidebar/CollectionContainer/CollectionContainer.jsx';
 import Header from './Components/Header/Header.jsx';
 import Sidebar from './Components/Sidebar/Sidebar.jsx';
 
@@ -15,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 
@@ -25,9 +21,7 @@ const[cards, setCards] = useState ([]);
 const[card, setCard] = useState([cards]);
 const[collections, setCollections] = useState([]);
 const[center, setCenter] = useState(true); 
-// const centerRef = useRef(center);
 const[collection, setCollection] = useState(null);
-const[noLines, setLines] = useState(true);
 const[index, setIndex] = useState(0);
 
 const[cardContent, setCardContent] = useState([]);
@@ -35,7 +29,7 @@ const[questions, setQuestions] = useState(null);
 const[selected, setSelected] = useState(false);
 const[otherSelected, setOtherSelected] = useState(false);
 const [modalShow, setModalShow] = useState(false);
-
+const[reload, setReload] = useState(false);
 
 const[prev, setPrev] = useState(false);
 const[next, setNext] = useState(true);
@@ -76,10 +70,8 @@ async function getAllCollections() {
 
 
   async function getCollection(){
-    console.log(`title: ${collection.title}`);
     let response = await axios.get(`http://127.0.0.1:8000/api/collections/${collection?.id}/cards/`)
     setCards(response.data);
-    console.log(response.data)
 }
 
 
@@ -135,16 +127,16 @@ function setDefaultCard(){
         <div className  ='sidebar-container'>
           <Header/>
           <div className ='sidebar-horizontal'>
-          <Sidebar collections = {collections} setCollections = {setCollections} collection = {collection} setCollection = {setCollection}  center = {center} setCenter = {setCenter} questions = {questions} setQuestions = {setQuestions} index = {index} setIndex = {setIndex} selected = {selected} setSelected = {setSelected}  otherSelected = {otherSelected} setOtherSelected = {setOtherSelected} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} />
+          <Sidebar collections = {collections} setCollections = {setCollections} getCollection = {getCollection} collection = {collection} setCollection = {setCollection}  center = {center} setCenter = {setCenter} questions = {questions} setQuestions = {setQuestions} index = {index} setIndex = {setIndex} selected = {selected} setSelected = {setSelected}  otherSelected = {otherSelected} setOtherSelected = {setOtherSelected} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} />
           
           {center ? (
             <CardViewer/>
             ):(
             
            !questions ? (
-          <Collection collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard}/>
+          <Collection collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>
           ):(
-          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} />))}
+          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>))}
  
 
 

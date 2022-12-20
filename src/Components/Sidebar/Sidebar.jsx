@@ -1,12 +1,10 @@
 
-
 import React, { useEffect, useState } from 'react';
 import MappedSidebar from './MappedSidebar.jsx'
 
-export default function Sidebar({collections, setCollection,  questions, setQuestions, center, setCenter, index, setIndex}) {
+export default function Sidebar({collections, setCollection,  questions, setQuestions, center, setCenter, index, setIndex, collection, getCollection}) {
 
   const[active, setActive] = useState(false);
-
 
 
   return (
@@ -17,10 +15,8 @@ export default function Sidebar({collections, setCollection,  questions, setQues
 
       {collections.map((el) => {
         return(
-          active ? (<MappedSidebar collections = {collections} setCollection = {setCollection} center = {center} setCenter = {setCenter} quesgtions = {questions} setQuestions = { setQuestions } active = {active} setActive = {setActive} index = {index} setIndex = {setIndex} el = {el} className = 'collection-item-active'/> 
-          ):(
-            <MappedSidebar collections = {collections} setCollection = {setCollection} center = {center} setCenter = {setCenter} quesgtions = {questions} setQuestions = { setQuestions } active = {active} setActive = {setActive} index = {index} setIndex = {setIndex} el = {el} className = 'collection-item'/>
-          )
+          <MappedSidebar collection = {collection} getCollection = {getCollection} collections = {collections} setCollection = {setCollection} center = {center} setCenter = {setCenter} questoins = {questions} setQuestions = { setQuestions } index = {index} setIndex = {setIndex} el = {el} className = 'collection-item'/> 
+          
           )
       })}
 
@@ -34,4 +30,3 @@ export default function Sidebar({collections, setCollection,  questions, setQues
 }
 
 //make new component. put handler in component that changes classname of that element 
-

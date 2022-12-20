@@ -18,7 +18,7 @@ export default function CardContainer({collection, cards, setCards}) {
 
 useEffect(() => {
   getAnswers();
-}, []);
+}, [collection]);
 
 
 

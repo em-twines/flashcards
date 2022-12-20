@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 
-export default function AddCard({collection, show, onHide, cards, setCards}) {
+export default function AddCard({collection, show, onHide, cards, setCards, getCollection, setNext, setReload, changeInequality}) {
 
 
 const[word, setWord] = useState('');
@@ -15,9 +14,13 @@ const[definition, setDefinition] = useState('');
       let res = await axios.post(`http://127.0.0.1:8000/api/collections/${collection.id}/cards/`, card);
         console.log(res); 
         if(res.status === 201){
-          setCards(cards);
+          getCollection();
+          changeInequality();
+          // setNext(true);
+
         }
     }
+
     function handleSubmit(event){
         event.preventDefault();
        let newCard = {
@@ -26,10 +29,12 @@ const[definition, setDefinition] = useState('');
         }
         console.log (newCard);
         addNewCard(newCard);
+        // setReload(true);
 
     }
 
     
+
 
   return (
     // <div className = 'add-card'><button className = "add-button btn bg-transparent btn-outline-transparent btn-lg"><i class="bi bi-plus font-adjust"></i></button>
