@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react';
 import Collection from './CollectionContainer/Collection';
 
-export default function MappedSidebar({collection, collections, setCollection, setQuestions, setCenter,setIndex, el, className, getCollection}){
+export default function MappedSidebar({collection, collections, setCollection, setQuestions, setCenter, setIndex, el, className, getCollection}){
 
     // useEffect(() => {
     //     setActive(false);
