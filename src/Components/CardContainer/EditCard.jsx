@@ -4,7 +4,7 @@ import React, { useState , useEffect} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 
-export default function EditCard({refresh, collection, card, setCard, collections, definition, setDefinition, word, cards, setWord, show, onHide, index}) {
+export default function EditCard({value, setValue, collection, card, setCard, collections, definition, setDefinition, word, cards, setWord, show, onHide, index}) {
 
 
 
@@ -24,8 +24,7 @@ export default function EditCard({refresh, collection, card, setCard, collection
       definition: definition
     }
     edit(editedCard);
-    // window.location.reload(); 
-    // re-reloads the whole page and sends back to center as blank notecard.
+    setValue();
     }
 
 
@@ -51,7 +50,8 @@ export default function EditCard({refresh, collection, card, setCard, collection
             <input className ='form-control' type = 'text' placeholder={`${cards[index]?.word}`} value={word} onChange={(event) => setWord(event.target.value)} required></input>
     
             <label className = 'name'>Back</label>
-            <input className ='form-control' type = 'text'  placeholder={`${cards[index]?.definition}`} value={definition} onChange={(event) => setDefinition(event.target.value)} required></input> <button onClick={() => {onHide() }} className = 'badge badge-pill btn btn-primary ' type = 'submit'>Submit</button>
+            <input className ='form-control' type = 'text'  placeholder={`${cards[index]?.definition}`} value={definition} onChange={(event) => setDefinition(event.target.value)} required></input> 
+            <button onClick={() => {onHide()}} className = 'badge badge-pill btn btn-primary ' type = 'submit'>Submit</button>
         </form>
       </Modal.Body>
       </Modal>

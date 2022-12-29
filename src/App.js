@@ -41,6 +41,8 @@ const[next, setNext] = useState(true);
 const [inequality, setInequality] = useState(false);
 const [prevInequality, setPrevInequality] = useState(false);
 
+//refresh page
+const [value, setValue] = useState();
 
 
 function changeInequality(){
@@ -139,9 +141,9 @@ function setDefaultCard(){
             ):(
             
            !questions ? (
-          <Collection collection = {collection} collections = {collections} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>
+          <Collection collection = {collection} collections = {collections} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload} value = {value} setValue = {setValue}/>
           ):(
-          <Card collection = {collection} collections = {collections} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>))}
+          <Card collection = {collection} collections = {collections} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload} value = {value} setValue = {setValue}/>))}
  
 
 

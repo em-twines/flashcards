@@ -9,7 +9,7 @@ import DeleteCard from '../../CardContainer/DeleteCard';
 import EditCard from '../../CardContainer/EditCard';
 
 
-export default function Collection({collections, setCollection, collection, index, setIndex, cards, setCards, questions, setQuestions, modalShow, setModalShow, card, setCard, getCollection, displayPrevCard, displayNextCard, changeInequality, inequality, setInequality, prevInequality, setPrevInequality, prev, setPrev, next, setNext, setDefaultCard, setReload, word, setWord, definition, setDefinition}) {
+export default function Collection({collections, setCollection, collection, index, setIndex, cards, setCards, questions, setQuestions, modalShow, setModalShow, card, setCard, getCollection, displayPrevCard, displayNextCard, changeInequality, inequality, setInequality, prevInequality, setPrevInequality, prev, setPrev, next, setNext, setDefaultCard, setReload, word, setWord, definition, setDefinition, value, setValue}) {
 
 
 
@@ -32,7 +32,7 @@ export default function Collection({collections, setCollection, collection, inde
         
         <div className = 'edit-button' onClick={() => setModalShow(true)}><button  className = "btn bg-transparent btn-outline-transparent btn-lg"><i class="bi bi-pen edit-size"></i></button></div>
 
-        <EditCard cards = {cards} setCard  ={setCard} collection = {collection} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} collections = {collections} index = {index} show={modalShow} onHide={() => setModalShow(false)}/>
+        <EditCard value = {value} setValue = {setValue} cards = {cards} setCard  ={setCard} collection = {collection} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} collections = {collections} index = {index} show={modalShow} onHide={() => setModalShow(false)}/>
 
     </div>
 

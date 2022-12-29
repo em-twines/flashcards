@@ -8,12 +8,7 @@ import EditCard from './EditCard';
 import CardNumber from './CardNumber';
 import CardContainer from './CardContainer';
 
-export default function Card({collection, collections, cards, index, setIndex, setCards, lines, setLines , questions, setQuestions, modalShow, setModalShow, card, setCard, getCollection, displayNextCard, displayPrevCard, changeInequality, inequality, setInequality, prevInequality, setPrevInequality, prev, setPrev, next, setNext, setReload, word, setWord, definition, setDefinition}){
-  const [value, setValue] = useState();
-  function refresh(){
-    setValue({});
-}
-
+export default function Card({collection, collections, cards, index, setIndex, setCards, lines, setLines , questions, setQuestions, modalShow, setModalShow, card, setCard, getCollection, displayNextCard, displayPrevCard, changeInequality, inequality, setInequality, prevInequality, setPrevInequality, prev, setPrev, next, setNext, setReload, word, setWord, definition, setDefinition, value, setValue}){
 
 
 
@@ -35,7 +30,7 @@ export default function Card({collection, collections, cards, index, setIndex, s
       
       <div className = 'edit-button' onClick={() => setModalShow(true)}><button  className = "btn bg-transparent btn-outline-transparent btn-lg"><i class="bi bi-pen edit-size"></i></button></div>
 
-      <EditCard refresh = {refresh} cards = {cards} collection = {collection} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} collections = {collections} index = {index} show={modalShow} onHide={() => setModalShow(false)}/>
+      <EditCard value = {value} setValue = {setValue}  cards = {cards} collection = {collection} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} collections = {collections} index = {index} show={modalShow} onHide={() => setModalShow(false)}/>
       {/* <CardNumber index = {index} cards = {cards} getCollection = {getCollection}/> */}
       <div className = 'card-number'> {index+1}/{cards.length}</div>
 
