@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 
-export default function AddCard({collection, show, onHide, cards, setCards, getCollection, setNext, setReload, changeInequality}) {
+export default function AddCard({collection, show, onHide, cards, setCards, getCollection, setNext, setReload, changeInequality, word, setWord, definition, setDefinition}) {
 
 
-const[word, setWord] = useState('');
-const[definition, setDefinition] = useState('');
 
 
     async function addNewCard(card){

@@ -185,16 +185,10 @@
 
 .edit-button{
   position: absolute; 
-  top: 82%;
-  transform: translateY(-82%);  
-  left: 10%;
-  transform: translateX(-10%); 
-  /* border-radius: 4px; */
-  background-color:transparent;
-  border: none;
-  color: #000000;
-  transition: all 0.3s;
-  cursor: pointer; 
+  top: 12%;
+  transform: translateY(-10%); 
+  left: 9%;
+  transform: translateX(-9%);
 } 
 
 
@@ -220,10 +214,17 @@
 
 .delete-card{
   position: absolute; 
-  top: 10%;
-  transform: translateY(-10%); 
-  left: 9%;
-  transform: translateX(-9%);
+  top: 82%;
+  transform: translateY(-82%);  
+  left: 10%;
+  transform: translateX(-10%); 
+  /* border-radius: 4px; */
+  background-color:transparent;
+  border: none;
+  color: #000000;
+  transition: all 0.3s;
+  cursor: pointer; 
+
 }
 
 .delete-button{

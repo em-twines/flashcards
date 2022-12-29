@@ -17,15 +17,20 @@ import axios from 'axios';
 
 function App() {
 
+// Card refers to back and Collection to front, while collections refers to the different decks in the sidebar. 
+
 const[cards, setCards] = useState ([]);
 const[card, setCard] = useState([cards]);
 const[collections, setCollections] = useState([]);
-const[center, setCenter] = useState(true); 
+const[center, setCenter] = useState(true); //center refers to what is in the center of the page, ie it controls whether or not there is content on the card. It toggles to on when the sidebar buttons (the collections) are clicked.
 const[collection, setCollection] = useState(null);
-const[index, setIndex] = useState(0);
-
 const[cardContent, setCardContent] = useState([]);
 const[questions, setQuestions] = useState(null);
+const[index, setIndex] = useState(0);
+//sets front (word) and back(definition) 
+const[word, setWord] = useState('');
+const[definition, setDefinition] = useState('');
+
 const[selected, setSelected] = useState(false);
 const[otherSelected, setOtherSelected] = useState(false);
 const [modalShow, setModalShow] = useState(false);
@@ -134,21 +139,12 @@ function setDefaultCard(){
             ):(
             
            !questions ? (
-          <Collection collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>
+          <Collection collection = {collection} collections = {collections} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} cardContent = {cardContent} questions = {questions} setQuestions = {setQuestions}  modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>
           ):(
-          <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>))}
+          <Card collection = {collection} collections = {collections} word = {word} setWord = {setWord} definition = {definition} setDefinition = {setDefinition} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} questions = {questions} setQuestions = {setQuestions} modalShow = {modalShow} setModalShow = {setModalShow} card = {card} setCard = {setCard} getCollection = {getCollection} displayNextCard = {displayNextCard} displayPrevCard = {displayPrevCard} changeInequality = {changeInequality} inequality = {inequality} setInequality = {setInequality} prevInequality = {prevInequality} setPrevInequality = {setPrevInequality} prev = {prev} setPrev = {setPrev} next = {next} setNext= {setNext} setDefaultCard = {setDefaultCard} reload = {reload} setReload = {setReload}/>))}
  
 
 
-          {/* {noLines ? (
-            (center ? (
-            <CardViewer/>
-            ):(
-              <Collection collection = {collection} index = {index} setIndex = {setIndex} noLines = {noLines} setLines = {setLines} cards = {cards} setCards = {setCards} cardContent = {cardContent}/>
-            ))
-          ):(
-            <Card collection = {collection} index = {index} setIndex = {setIndex} cards = {cards} setCards = {setCards} noLines = {noLines} setLines = {setLines} collectionComponent = {collectionComponent}setCollectionComponent = {setCollectionComponent}/>
-          )} */}
         </div>
       </div>      
     </div>
